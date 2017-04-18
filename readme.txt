@@ -1,4 +1,28 @@
 这本书教程有点问题   引入的时候引入方式不应该是from flask.ext.script import Manager  应该是  from flask_script import Manager  否则会出现各种问题
+***
+出现错误
+
+
+flask_sqlalchemy\__init__.py:800: UserWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True to suppress this warning.
+  warnings.warn('SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True to suppress this warning.')
+
+
+参考
+
+http://blog.csdn.net/qq_25730711/article/details/53690687
+***
+
+注意位置
+
+
+app = Flask(__name__)
+
+manager = Manager(app)
+db = SQLAlchemy(app)
+bootstrap = Bootstrap(app)
+moment = Moment(app)
+***
+
 
 ### flask学习
 
